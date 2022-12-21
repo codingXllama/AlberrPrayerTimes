@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image:url(bgMain.jpg);
+  background-position: center;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #5e5b5b;
+  font-family: Montserrat, san-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* aligning vertically */
+  align-items: center;
+  /* align horizontally */
+  justify-content: center;
+  border-collapse: collapse;
+
+  
+}
+
+table{
+  width: 900vw;
+  max-height: 10%;
+  max-width: 100px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border-collapse: collapse;
+  background-color: #ffffff26;
+  box-shadow: 0 10px 10px 10px rgb(0, 0, 0, 0.2);
+  font-family: sans-serif;
+  border-collapse: collapse;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+
+
+th{
+    background-color: #5f8586;
+    color: white;
+    /* padding:0px 4px; */
+}
+th,td{
+    padding:1.2rem;
+    font-size:1.4rem;
+    
+}
+
+#currentTime,#imgLogo,#currentDate{
+    background:rgba(255, 255, 255, 0);
+    color:#555;
+
+}
+
+tbody{
+    background: #eee;
+    color:#555;
+}
+
+.prayers * {
+color:rgb(241, 241, 241);
+text-align: left;
+}
+
+#iqama{
+ /* display: block; */
+ /* align-items: flex-end; */
+ text-align: center;   
+    
+}
+#fajr-iqama, #duhr-iqama, #asr-iqama, #maghrib-iqama, #isha-iqama, #sunrise-iqama{
+    background-color: #94c0ad52;
+    /* text-align: right; */
+    /* margin: right 100%;; */
+}
+
+#adthan,#first-prayer,#fajr-adhan,#sunrise-time, #duhr-adhan, #asr-adhan, #maghrib-adhan, #isha-adhan{
+    text-align:end;
+  
+}
+
+#sunrise,#fair-prayer,#duhr-prayer,#asr-prayer,#maghrib-prayer,#isha-prayer
+{
+    /* color:Red; */
+    text-align: left;
+}
+
+.jummahSection
+{
+   background-color: #9cbcb3;
+   text-align: center;
+    
+
+}
+
+
+@media screen and (max-width:600px){
+    th,td{
+    padding:0.7rem;
+    font-size:1.2rem;
+    
+} 
+}
+
+/* @media screen and (min-width: 600px)
+{
+    thead{
+        display: none;
+    }
+
+    td{
+      display: flex;  
+    }
+    td:first-child{
+        background-color: rgb(65, 103, 61);
+        color: white;
+        text-align: center;
+    }
+    td:nth-child(2)::before{
+        content: "Adhan: ";
+    }
+    td:nth-child(3)::before{
+        content: "Iqama: ";
+    }
+
+
+    td{
+        text-align: right;
+    }
+    td::before{
+        float: left;
+        margin-right: 3rem;
+        font-weight: bold;
+    }
+} */

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AlBer Mosque Prayer Times</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png"
+            href="https://www.google.com/s2/u/0/favicons?domain=https://www.masjidalber.com/" />
+
+    </head>
+
+    <body>
+        <table>
+            <thead>
+
+                <tr>
+                    <th id="currentTime"></th>
+                    <th id="imgLogo"><img src="logo-good.png" alt="" srcset=""></th>
+                    <th id="currentDate">Date</th>
+                </tr>
+
+
+                <tr class="prayers">
+                    <th>Prayer</th>
+                    <th id="adthan">Adhan</th>
+                    <th id="iqama">Iqama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fajr -->
+                <tr>
+                    <td id="fair-prayer"><span>Fajr</span> </td>
+                    <td id="fajr-adhan"></td>
+                    <td id="fajr-iqama"></td>
+                </tr>
+                <!-- Sunrise -->
+                <tr>
+                    <td id="sunrise">Sunrise</td>
+                    <td id="sunrise-time"></td>
+                    <td id="sunrise-iqama">_____</td>
+                </tr>
+                <!-- Duhr -->
+                <tr>
+                    <td id="duhr-prayer">Duhr</td>
+                    <td id="duhr-adhan"></td>
+                    <td id="duhr-iqama"></td>
+                </tr>
+                <!-- Asr -->
+                <tr>
+                    <td id="asr-prayer">Asr</td>
+                    <td id="asr-adhan"></td>
+                    <td id="asr-iqama"></td>
+                </tr>
+
+                <!-- Maghreb -->
+                <tr>
+                    <td id="maghrib-prayer">Maghreb</td>
+                    <td id="maghrib-adhan"></td>
+                    <td id="maghrib-iqama"></td>
+                </tr>
+
+                <!-- Isha -->
+                <tr>
+                    <td id="isha-prayer">Isha</td>
+                    <td id="isha-adhan"></td>
+                    <td id="isha-iqama"></td>
+                </tr>
+
+                <tr class="jummahSection">
+                    <td>Jumu'ah</td>
+                    <td id="first-prayer">12:35</td>
+                    <td>01:30 </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <script src="app.js"></script>
+    </body>
+
+</html>
