@@ -21,9 +21,9 @@ body {
 }
 
 table{
-  width: 100vw;
-  max-height: 10%;
-  max-width: 100px;
+  /* width: 100vw; */
+  /* max-height: 10%; */
+  max-width: 900px;
   padding: 10px 5px;
   border-radius: 10px;
   border-collapse: collapse;
@@ -81,6 +81,7 @@ text-align: left;
 
 #adthan,#first-prayer,#fajr-adhan,#sunrise-time, #duhr-adhan, #asr-adhan, #maghrib-adhan, #isha-adhan{
     text-align:end;
+    color:rgb(232, 166, 166)
   
 }
 

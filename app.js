@@ -18,14 +18,10 @@ const ishaAdhan_timing = document.getElementById("isha-adhan");
 const ishaIqama_timing = document.getElementById("isha-iqama");
 
 // const ishaIqama_timings
-var currentTime = new Date().toLocaleTimeString();
+// var currentTime = new Date().toLocaleTimeString();
 var currentDate = new Date().toLocaleDateString("en-US");
-// var x = currentDate.toISOString().slice(0, 10);
-// var enDate = x.toLocaleDateString("en-us");
+// currentDate_ID.textContent = currentDate.slice(0, 10);
 
-// currentTimeID.textContent = currentTime;
-currentDate_ID.textContent = currentDate.slice(0, 10);
-// setInterval(currentTime, 1000);
 
 // prayer List
 
@@ -77,10 +73,10 @@ function doDate() {
     now.getSeconds();
 
   var currentTime = new Date().toLocaleTimeString();
-  // var timeSign = new Date().toLocaleTimeString().slice();
 
   document.getElementById("currentTime").innerHTML = currentTime.toUpperCase();
-  // document.getElementById("currentTime").innerHTML = currentTime +" "+ timeSign;
+  currentDate_ID.textContent = currentDate.slice(0, 10);
+
 }
 // updating the time every second
 setInterval(doDate, 100);
@@ -96,7 +92,7 @@ async function getPrayer2() {
     // to access the data
 
     .then(function (allPrayers) {
-      console.log("hi");
+      // console.log("hi");
       var now = new Date();
       const monthNumber = new Date().getMonth() + 1;
       // console.log(monthNumber);
@@ -105,7 +101,7 @@ async function getPrayer2() {
       // var todaysDate = currentYear + "-" + monthNumber + "-0" + todaysMonthDay;
       var todaysDate = currentYear + "-" + monthNumber + "-" + todaysMonthDay;
 
-      console.log(todaysDate);
+      // console.log(todaysDate);
 
       // let placeholder = document.querySelector(".container");
       let out = "";
@@ -114,7 +110,7 @@ async function getPrayer2() {
         // console.log(todaysDate);
         if (prayer.Date == todaysDate) {
           var sunriseTime = prayer.Sunrise;
-          console.log(sunriseTime);
+          // console.log(sunriseTime);
           var fajrAdhan = prayer.Fajr;
           var fajrIqama = prayer.FajrIqama;
 
@@ -162,7 +158,7 @@ async function getPrayer2() {
         }
         // placeholder.innerHTML = out;
       }
-      console.log(out);
+      // console.log(out);
 
       fajrIqama_timing.innerHTML = fajrIqama;
       fajrAdhan_timing.innerHTML = fajrAdhan;
