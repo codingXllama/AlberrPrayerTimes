@@ -59,7 +59,7 @@ function doDate() {
 setInterval(doDate, 100);
 
 async function getPrayer2() {
-  fetch("./PrayerTimes22.json")
+  fetch("PrayerTimes22.json")
     .then(function (response) {
       return response.json();
     })
