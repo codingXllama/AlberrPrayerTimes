@@ -100,7 +100,8 @@ tbody {
 #duhr-prayer,
 #asr-prayer,
 #maghrib-prayer,
-#isha-prayer {
+#isha-prayer,
+#prayerLabel {
   /* color:Red; */
   text-align: left;
 }
