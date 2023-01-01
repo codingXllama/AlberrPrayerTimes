@@ -1,12 +1,12 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-image: url(./Images/bgMain.jpg);
+  /* background-image: url(./Images/bgMain.jpg); */
   background-position: center;
 
   background-size: cover;
   background-repeat: no-repeat;
-  color: #5e5b5b;
+  /* color: #5e5b5b; */
   font-family: Montserrat, san-serif;
   text-align: center;
   display: flex;
@@ -122,6 +122,10 @@ tbody {
   table {
     /* width: 20vw; */
   }
+}
+
+.top{
+    color:red;
 }
 
 /* @media screen and (min-width: 600px)
