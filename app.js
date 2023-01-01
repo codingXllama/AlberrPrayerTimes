@@ -179,8 +179,10 @@ async function getPrayer2() {
           currentTimeID.style.color = "#eee";
           currentDate_ID.style.color = "#eee";
         }
-      } else {
+      }
+      if (currentTimeSignature.toLowerCase() === "pm") {
         // getting all afternoon prayer times
+        // console.log("in");
 
         var duhrAdthanMinutes = parseInt(duhrAdhan.slice(-2));
         var duhrAdthanHours = parseInt(duhrAdhan);
@@ -206,6 +208,7 @@ async function getPrayer2() {
 
         if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours) {
           document.body.style.background = "url('./Images/bgMain.jpg')";
+          // alert("hi");
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
@@ -219,12 +222,12 @@ async function getPrayer2() {
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
         } else {
-          document.body.style.background = "url('./Images/bgNight.jpg')";
+          document.body.style.background = "url('./Images/bgMain.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
-          currentTimeID.style.color = "#eee";
-          currentDate_ID.style.color = "#eee";
+          currentTimeID.style.color = "#555";
+          currentDate_ID.style.color = "#555";
         }
       }
 
