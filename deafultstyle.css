@@ -58,12 +58,12 @@ td {
 }
 
 tbody {
-  background: #eee;
+  background: rgba(255, 255, 255, 0.845);
   color: #555;
 }
 
 .prayers * {
-  color: rgb(241, 241, 241);
+  color: rgb(241, 241, 241)
   text-align: left;
 }
 
@@ -111,10 +111,16 @@ tbody {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    border-collapse: collapse;
+  }
   th,
   td {
     padding: 0.7rem;
     font-size: 1.2rem;
+  }
+  table {
+    width: 20vw;
   }
 }
 
