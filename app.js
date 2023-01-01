@@ -163,15 +163,23 @@ async function getPrayer2() {
         var ishaAdthanMinutes = parseInt(ishaAdhan.slice(-2));
         var ishaIqamaMinutes = parseInt(ishaIqama.slice(-2));
         // maghribAdthanHours = 12;
+        // current12_hourTime = 10;
 
-        if (current12_hourTime >= asrAdthanHours && current12_hourTime < maghribAdthanHours) {
+        if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours) {
+          document.body.style.background = "url('./Images/bgMain.jpg')";
+          document.body.style.backgroundPosition = "center";
+          document.body.style.backgroundSize = "cover";
+          document.body.style.backgroundRepeat = "no-repeat";
+          currentTimeID.style.color = "#555";
+          currentDate_ID.style.color = "#555";
+        } else if (current12_hourTime >= asrAdthanHours && current12_hourTime < maghribAdthanHours) {
           document.body.style.background = "url('./Images/bgAsr.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
-        } else if (current12_hourTime >= maghribAdthanHours) {
+        } else {
           document.body.style.background = "url('./Images/bgNight.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
