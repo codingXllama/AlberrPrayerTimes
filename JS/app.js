@@ -172,9 +172,9 @@ async function getPrayer2() {
 
             //changing the background when it's Maghrib time
             if (current24Hours >= asrIqama_hours && current24Hours < maghribAdthanHours) {
-              document.body.style.backgroundImage = "url('../Images/bgAsr.jpg')";
+              document.body.style.backgroundImage = "url('./Images/bgAsr.jpg')";
             } else if (current24Hours >= maghribAdthanHours) {
-              document.body.style.backgroundImage = "url('../Images/bgNight.jpg')";
+              document.body.style.backgroundImage = "url('./Images/bgNight.jpg')";
               currentTimeID.style.color = "#eee";
               currentDate_ID.style.color = "#eee";
             }
