@@ -37,6 +37,7 @@ function doDate() {
   str += "Today is: " + days[now.getDay()] + ", " + now.getDate() + " " + months[now.getMonth()] + "" + now.getFullYear() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
   var currentTime = new Date().toLocaleTimeString();
+  // var currentMinutes = now.getMinutes();
 
   document.getElementById("currentTime").innerHTML = currentTime.toUpperCase();
   currentDate_ID.textContent = currentDate.slice(0, 10);
@@ -53,16 +54,16 @@ async function getPrayer2() {
     // to access the data
 
     .then(function (allPrayers) {
-      // console.log("hi");
       var now = new Date();
+      var currentMinutes = now.getMinutes();
+      var current12_hourTime = parseInt(now.toLocaleDateString("en-us", { hour: "numeric", hour12: true }).slice(-5));
+      var currentTimeSignature = now.toLocaleDateString("en-us", { hour: "numeric", hour12: true }).slice(-2);
+
+      // creating the unique ID for the JSON
       const monthNumber = new Date().getMonth() + 1;
-      // console.log(monthNumber);
       const currentYear = new Date().getFullYear();
       var todaysMonthDay = now.getDate();
-      // var todaysDate = currentYear + "-" + monthNumber + "-0" + todaysMonthDay;
       var todaysDate = currentYear + "-" + monthNumber + "-" + todaysMonthDay;
-
-      // console.log(todaysDate);
 
       // let placeholder = document.querySelector(".container");
       let out = "";
@@ -90,14 +91,6 @@ async function getPrayer2() {
           var ishaAdhan = prayer.Isha;
           var ishaIqama = prayer.IshaIqama;
 
-          // if (currentTime > ishaAdhan) {
-          //   // ishaBox.style.backgroundColor = "#ff8396";
-          //   console.log("current time type:" + typeof currentTime);
-          //   console.log("type of isha adhan: " + typeof ishaAdhan);
-          // } else {
-          //   ishaBox.style.backgroundColor = "";
-          // }
-
           out += `
             <p> Fajr </p>
             <p> Adhan: ${prayer.Fajr}</p>
@@ -119,6 +112,7 @@ async function getPrayer2() {
         }
         // placeholder.innerHTML = out;
       }
+
       // console.log(out);
 
       fajrIqama_timing.innerHTML = fajrIqama;
@@ -137,7 +131,62 @@ async function getPrayer2() {
       ishaIqama_timing.innerHTML = ishaIqama;
 
       sunrise_timing.innerHTML = sunriseTime;
-      // console.log(out.indexOf(1));
+
+      // Get the 12 time
+
+      // var current12_hour = current12_time.toLocaleDateString("en-us", { hour: "numeric", hour12: true });
+      console.log("current12 hr is", current12_hourTime);
+      console.log("current12 min is", currentMinutes);
+      // assigning the wallpaper for the time
+
+      if (currentTimeSignature.toLowerCase() === "am") {
+      } else {
+        // getting all afternoon prayer times
+
+        var duhrAdthanMinutes = parseInt(duhrAdhan.slice(-2));
+        var duhrAdthanHours = parseInt(duhrAdhan);
+        var duhrIqama_hours = parseInt(duhrIqama);
+        var duhrIqama_minutes = parseInt(duhrIqama.slice(-2));
+
+        var asrAdthanHours = parseInt(asrAdhan);
+        var asrAdthanMinutes = parseInt(asrAdhan.slice(-2));
+        var asrIqama_hours = parseInt(asrIqama);
+        var asrIqama_minutes = parseInt(asrIqama.slice(-2));
+
+        var maghribAdthanHours = parseInt(maghribAdhan);
+        var maghribAdthanMinutes = parseInt(maghribAdhan.slice(-2));
+        var maghribIqama_hours = parseInt(maghribIqama);
+        var maghribIqama_minutes = parseInt(maghribIqama.slice(-2));
+
+        var ishaAdthanHours = parseInt(ishaAdhan);
+        var ishaIqamaHours = parseInt(ishaIqama);
+        var ishaAdthanMinutes = parseInt(ishaAdhan.slice(-2));
+        var ishaIqamaMinutes = parseInt(ishaIqama.slice(-2));
+
+        // ****************************************** TESTS *****************************************
+
+        // console.log("duhr Adthan hrs", duhrAdthanHours);
+        // console.log("duhr Adthan Mins", duhrAdthanMinutes);
+        // console.log("duhr Iqama Hours", duhrIqama_hours);
+        // console.log("duhr Iqama mins", duhrIqama_minutes);
+
+        // console.log("Asr Adthan Hrs", asrAdthanHours);
+        // console.log("Asr Adthan Mins", asrAdthanMinutes);
+        // console.log("Asr Iqama Hrs", asrIqama_hours);
+        // console.log("Asr Iqama Mins", asrIqama_minutes);
+
+        // console.log("Maghrib Adthan Hrs: ", maghribAdthanHours);
+        // console.log("Maghrib Adthan Mins: ", maghribAdthanMinutes);
+        // console.log("Maghrib Iqama Hrs: ", maghribIqama_hours);
+        // console.log("Maghrib Iqama Mins: ", maghribIqama_minutes);
+
+        // console.log("Isha Adthan Hrs", ishaAdthanHours);
+        // console.log("Isha Adthan Mins", ishaAdthanMinutes);
+        // console.log("Isha Iqama Hrs", ishaIqamaHours);
+        // console.log("Isha Iqama Mins", ishaIqamaMinutes);
+
+        // ************************************ END OF TESTS *****************************************
+      }
     });
 }
 
