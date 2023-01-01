@@ -2,12 +2,12 @@
 
 body {
 margin: 0;
-  min-height: 100vh;
+min-height: 100vh;
   
   /* background-color: rgba(158, 109, 109, 0.652); */
 
   /* background-image: url(bgNight.jpg); */
-  /* background-image: url(../Images/bgMain.jpg); */
+  background-image: url(../Images/bgMain.jpg);
   /* background-image: url(bgAsr.jpg); */
 
   background-position: center;
@@ -28,8 +28,8 @@ margin: 0;
 
 table {
   width: 100vw;
-  max-height: 50%;
-  max-width: 300px;
+  max-height: 60%;
+  max-width: 500px;
   padding: 10px 5px;
   border-radius: 10px;
   border-collapse: collapse;
