@@ -59,7 +59,7 @@ function doDate() {
 setInterval(doDate, 100);
 
 async function getPrayer2() {
-  fetch("./PrayerTimes22.json")
+  fetch("PrayerTimes22.json")
     .then(function (response) {
       return response.json();
     })
@@ -172,9 +172,9 @@ async function getPrayer2() {
 
             //changing the background when it's Maghrib time
             if (current24Hours >= asrIqama_hours && current24Hours < maghribAdthanHours) {
-              document.body.style.backgroundImage = "url('./Images/bgAsr.jpg')";
+              document.body.style.backgroundImage = "url('../Images/bgAsr.jpg')";
             } else if (current24Hours >= maghribAdthanHours) {
-              document.body.style.backgroundImage = "url('./Images/bgNight.jpg')";
+              document.body.style.backgroundImage = "url('../Images/bgNight.jpg')";
               currentTimeID.style.color = "#eee";
               currentDate_ID.style.color = "#eee";
             }
@@ -271,26 +271,26 @@ async function getPrayer2() {
 }
 getPrayer2();
 
-async function CountDownTimer() {
-  // console.log("x");
-  var date1 = new Date();
-  var date2 = new Date();
+// async function CountDownTimer() {
+//   console.log("x");
+//   var date1 = new Date();
+//   var date2 = new Date();
 
-  var diff = date2.getTime() - date1.getTime();
+//   var diff = date2.getTime() - date1.getTime();
 
-  var msec = diff;
-  var hh = `0${Math.floor(msec / 1000 / 60 / 60)}`;
-  msec -= hh * 1000 * 60 * 60;
+//   var msec = diff;
+//   var hh = `0${Math.floor(msec / 1000 / 60 / 60)}`;
+//   msec -= hh * 1000 * 60 * 60;
 
-  var mm = `0${Math.floor(msec / 1000 / 60)}`;
-  msec -= mm * 1000 * 60;
+//   var mm = `0${Math.floor(msec / 1000 / 60)}`;
+//   msec -= mm * 1000 * 60;
 
-  var ss = `0${Math.floor(msec / 1000)}`;
-  msec -= ss * 1000;
+//   var ss = `0${Math.floor(msec / 1000)}`;
+//   msec -= ss * 1000;
 
-  // console.log("y");
-  return hh.slice(-2) + ":" + mm.slice(-2) + ":" + ss.slice(-2);
-}
+//   console.log("y");
+//   return hh.slice(-2) + ":" + mm.slice(-2) + ":" + ss.slice(-2);
+// }
 
-CountDownTimer();
+// CountDownTimer();
 setInterval(getPrayer2, 1000);
