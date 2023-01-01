@@ -146,10 +146,13 @@ async function getPrayer2() {
 
       // Get the 12 time
 
+      // ****************************************** TESTS *****************************************
       // var current12_hour = current12_time.toLocaleDateString("en-us", { hour: "numeric", hour12: true });
-      console.log("current12 hr is", current12_hourTime);
-      console.log("current12 min is", currentMinutes);
-      // assigning the wallpaper for the time
+      // console.log("current12 hr is", current12_hourTime);
+      // console.log("current12 min is", currentMinutes);
+      // ****************************************** END OF TESTS *****************************************
+
+      // Assigning the wallpaper for the time
 
       if (currentTimeSignature.toLowerCase() === "am") {
         var fajrAdthan_Minutes = parseInt(fajrAdhan.slice(-2));
@@ -160,35 +163,22 @@ async function getPrayer2() {
         var sunRise_hours = parseInt(sunriseTime);
         var sunRise_minutes = parseInt(sunriseTime.slice(-2));
 
-        if (current12_hourTime <= 12) {
-          document.body.style.background = "url('./Images/bgNight.jpg')";
-          document.body.style.backgroundPosition = "center";
-          document.body.style.backgroundSize = "cover";
-          document.body.style.backgroundRepeat = "no-repeat";
-          currentTimeID.style.color = "#eee";
-          currentDate_ID.style.color = "#eee";
-        } else {
+        if (current12_hourTime >= sunRise_hours && current12_hourTime < 12) {
           document.body.style.background = "url('./Images/bgMain.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
+        } else {
+          document.body.style.background = "url('./Images/bgNight.jpg')";
+          document.body.style.backgroundPosition = "center";
+          document.body.style.backgroundSize = "cover";
+          document.body.style.backgroundRepeat = "no-repeat";
+
+          currentTimeID.style.color = "#eee";
+          currentDate_ID.style.color = "#eee";
         }
-
-        // for later
-        // if (current12_hourTime >= sunRise_hours && currentMinutes + 2 < sunRise_minutes)
-        //   {
-
-        //   }
-        //   if (current12_hourTime <= 12 && current12_hourTime < sunRise_hours) {
-        //     document.body.style.background = "url('./Images/bgNight.jpg')";
-        //     document.body.style.backgroundPosition = "center";
-        //     document.body.style.backgroundSize = "cover";
-        //     document.body.style.backgroundRepeat = "no-repeat";
-        //     currentTimeID.style.color = "#eee";
-        //     currentDate_ID.style.color = "#eee";
-        //   }
       } else {
         // getting all afternoon prayer times
 
@@ -245,7 +235,7 @@ async function getPrayer2() {
       // console.log("Fajr Iqama Hrs: ", fajrIqama_hours);
       // console.log("Fajr Iqama Mins: ", fajrIqama_minutes);
 
-      console.log("Sunrise HR: ", sunRise_hours);
+      // console.log("Sunrise HR: ", sunRise_hours);
       // console.log("Sunrise min: ", sunRise_minutes);
 
       // console.log("duhr Adthan hrs", duhrAdthanHours);
