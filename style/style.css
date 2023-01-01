@@ -6,7 +6,7 @@ body {
   /* background-color: rgba(158, 109, 109, 0.652); */
 
   /* background-image: url(bgNight.jpg); */
-  /* background-image: url(/Images/bgMain.jpg); */
+  background-image: url(./Images/bgMain.jpg);
   /* background-image: url(bgAsr.jpg); */
 
   background-position: center;
@@ -55,7 +55,7 @@ td,
 }
 
 #imgLogo img {
-  width: 15vw;
+  /* width: 15vw; */
   /* border: 1px solid red; */
   /* height: 100; */
 }
@@ -184,9 +184,9 @@ tbody {
     font-size: 1.2rem;
     /* color:#555; */
   }
-  ,
   #imgLogo img {
-    width: auto;
+    width: 20vw;
+    /* border: 1px solid red; */
   }
 }
 
