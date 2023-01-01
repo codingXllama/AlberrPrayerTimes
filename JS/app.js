@@ -108,8 +108,8 @@ async function getPrayer2() {
           var currentMinutes = date.getMinutes();
 
           if (timeSignature.toLowerCase() === "pm") {
-            console.log("The current Hour is: ", current24Hours);
-            console.log("The current minutes is:", currentMinutes);
+            // console.log("The current Hour is: ", current24Hours);
+            // console.log("The current minutes is:", currentMinutes);
 
             //Duhr Indicator - InComplete
             var duhrAdthanMinutes = parseInt(prayer.Dhuhr.slice(-2));
@@ -272,7 +272,7 @@ async function getPrayer2() {
 getPrayer2();
 
 async function CountDownTimer() {
-  console.log("x");
+  // console.log("x");
   var date1 = new Date();
   var date2 = new Date();
 
@@ -288,7 +288,7 @@ async function CountDownTimer() {
   var ss = `0${Math.floor(msec / 1000)}`;
   msec -= ss * 1000;
 
-  console.log("y");
+  // console.log("y");
   return hh.slice(-2) + ":" + mm.slice(-2) + ":" + ss.slice(-2);
 }
 
