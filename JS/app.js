@@ -59,7 +59,7 @@ function doDate() {
 setInterval(doDate, 100);
 
 async function getPrayer2() {
-  fetch("PrayerTimes22.json")
+  fetch("./PrayerTimes22.json")
     .then(function (response) {
       return response.json();
     })
@@ -174,7 +174,7 @@ async function getPrayer2() {
             if (current24Hours >= asrIqama_hours && current24Hours < maghribAdthanHours) {
               document.body.style.backgroundImage = "url('./Images/bgAsr.jpg')";
             } else if (current24Hours >= maghribAdthanHours) {
-              document.body.style.backgroundImage = "url('./Images/bgNight.jpg')";
+              document.body.style.backgroundImage = "url(https://github.com/codingXllama/prayertimes/blob/14a09cd3b8733e20f0b091a9fa92ad8ff97c9681/Images/bgNight.jpg')";
               currentTimeID.style.color = "#eee";
               currentDate_ID.style.color = "#eee";
             }
