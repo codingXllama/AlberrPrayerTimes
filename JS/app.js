@@ -56,7 +56,7 @@ function doDate() {
   currentDate_ID.textContent = currentDate.slice(0, 10);
 }
 // updating the time every second
-setInterval(doDate, 100);
+setInterval(doDate, 1000);
 
 async function getPrayer2() {
   fetch("PrayerTimes22.json")
