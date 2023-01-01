@@ -1,26 +1,6 @@
 [
  {
-   "Date": "2022-12-31",
-   "Month": 12,
-   "Day": 31,
-   "HijriMonth": "Jamada-II",
-   "HijriDay": 8,
-   "Fajr": "06:24",
-   "FajrIqama": "06:45",
-   "Sunrise": "08:01",
-   "Dhuhr": "12:40",
-   "DhuhrIqama": "01:00",
-   "Asr": "02:51",
-   "AsrIqama": "03:30",
-   "Maghrib": "05:12",
-   "MaghribIqama": "05:17",
-   "Isha": "06:42",
-   "IshaIqama": "07:15",
-   "Hijri": "08 Jumada II"
-
- },
- {
-   "Date": "2023-12-01",
+   "Date": "2023-01-01",
    "Day": "Sun",
    "Hijri": "08 Jumada II",
    "Fajr": "06:37 ",
