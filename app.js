@@ -207,7 +207,7 @@ async function getPrayer2() {
         // maghribAdthanHours = 12;
         // current12_hourTime = 10;
 
-        if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours + 12) {
+        if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours + 1) {
           document.body.style.background = "url('./Images/bgMain.jpg')";
           alert("hi");
           document.body.style.backgroundPosition = "center";
