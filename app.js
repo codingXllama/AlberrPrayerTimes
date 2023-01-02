@@ -215,7 +215,7 @@ async function getPrayer2() {
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
-        } else if (current12_hourTime >= asrAdthanHours && current12_hourTime < maghribAdthanHours + 12) {
+        } else if (current12_hourTime >= asrAdthanHours && current12_hourTime < maghribAdthanHours) {
           document.body.style.background = "url('./Images/bgAsr.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
