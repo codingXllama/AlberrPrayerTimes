@@ -171,6 +171,7 @@ async function getPrayer2() {
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
         } else {
+          console.log("x");
           document.body.style.background = "url('./Images/bgNight.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
@@ -206,15 +207,15 @@ async function getPrayer2() {
         // maghribAdthanHours = 12;
         // current12_hourTime = 10;
 
-        if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours) {
+        if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours + 12) {
           document.body.style.background = "url('./Images/bgMain.jpg')";
-          // alert("hi");
+          alert("hi");
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
-        } else if (current12_hourTime >= asrAdthanHours && current12_hourTime < maghribAdthanHours) {
+        } else if (current12_hourTime >= asrAdthanHours && current12_hourTime < maghribAdthanHours + 12) {
           document.body.style.background = "url('./Images/bgAsr.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
