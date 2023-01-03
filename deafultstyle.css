@@ -17,8 +17,6 @@ body {
   border-collapse: collapse;
 }
 
-
-
 table {
   width: 20vw;
   max-height: 10%;
@@ -64,7 +62,7 @@ tbody {
 }
 
 .prayers * {
-  color: rgb(241, 241, 241)
+  color: rgb(241, 241, 241);
   text-align: left;
 }
 
@@ -126,29 +124,27 @@ tbody {
   }
 }
 
-.top{
-    color:red;
+.top {
+  color: red;
 }
 
-
 .button {
-    position: bottom;
-    top:50%;
-    background-color:#5f8586;
-    color: #fff;
-    border:none; 
-    border-radius:10px; 
-    padding:15px;
-    min-height:30px; 
-    font-size: 1rem;
-    min-width: 120px;
-  }
+  position: bottom;
+  top: 50%;
+  background-color: #5f8586;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 30px;
+  font-size: 1rem;
+  min-width: 120px;
+}
 
-   .button:focus {
-    outline-color: transparent;
-    outline-style:solid;
-    box-shadow: 0 0 0 4px #94c0ad52;
-;
+.button:focus {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 4px #94c0ad52;
 }
 /* @media screen and (min-width: 600px)
 {
