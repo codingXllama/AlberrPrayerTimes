@@ -209,7 +209,7 @@ async function getPrayer2() {
 
         if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours + 1) {
           document.body.style.background = "url('./Images/bgMain.jpg')";
-          alert("hi");
+          // alert("hi");
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
