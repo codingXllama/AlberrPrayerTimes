@@ -110,20 +110,6 @@ tbody {
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    border-collapse: collapse;
-  }
-  th,
-  td {
-    padding: 0.7rem;
-    font-size: 1.2rem;
-  }
-  table {
-    /* width: 20vw; */
-  }
-}
-
 .top {
   color: red;
 }
@@ -177,3 +163,34 @@ tbody {
         font-weight: bold;
     }
 } */
+
+@media screen and (max-width: 600px) {
+  body {
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: 0.6rem;
+    font-size: 1.2rem;
+  }
+  table {
+    /* width: 20vw; */
+  }
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    border-collapse: collapse;
+
+    padding: 1rem;
+    font-size: 1.2rem;
+    /* color: red; */
+  }
+  table {
+    /* width: 20vw; */
+  }
+}
