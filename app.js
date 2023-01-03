@@ -17,8 +17,18 @@ const maghribIqama_timing = document.getElementById("maghrib-iqama");
 const ishaAdhan_timing = document.getElementById("isha-adhan");
 const ishaIqama_timing = document.getElementById("isha-iqama");
 
+//button
+
+const toggleButton = document.getElementsByClassName("toggle-button")[0];
+const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+
+// toggleButton.addEventListener("click", () => {
+//   navbarLinks.classList.toggle("active");
+// });
+
 // var currentTime = new Date().toLocaleTimeString();
 var currentDate = new Date().toLocaleDateString("en-US");
+
 // currentDate_ID.textContent = currentDate.slice(0, 10);
 
 // prayer List

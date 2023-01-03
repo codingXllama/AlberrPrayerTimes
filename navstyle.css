@@ -1,5 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
   /* background-image: url(./Images/bgMain.jpg); */
   background-position: center;
@@ -19,7 +24,7 @@ body {
 
 table {
   width: 20vw;
-  max-height: 10%;
+  max-height: 0%;
   max-width: 900px;
   padding: 10px 5px;
   border-radius: 10px;
@@ -111,21 +116,20 @@ tbody {
 }
 
 .top {
-  /* color: red; */
+  color: red;
 }
 
 .button {
-  position: top;
-  top: 20%;
-  background-color: #5f858673;
+  position: bottom;
+  top: 50%;
+  background-color: #5f8586;
   color: #fff;
   border: none;
-  /* border-radius: 20px; */
+  border-radius: 10px;
   padding: 15px;
   min-height: 30px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   min-width: 120px;
-  box-shadow: 0 10px 10px 10px rgb(0, 0, 0, 0.2);
 }
 
 .button:focus {
@@ -165,6 +169,75 @@ tbody {
     }
 } */
 
+/* Creating the Nav-bar - Non-responsive */
+.navbar {
+  /* width: 20vw; */
+  display: flexbox;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar-links {
+  display: none;
+  /* width: 100%; */
+}
+/* .title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+} */
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* width: 20vw; */
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  /* padding: 0.5rem 1rem; */
+  /* display: block; */
+}
+
+.navbar-links.active {
+  display: flex;
+}
+
+.navbar-links li:hover {
+  background-color: #5555;
+}
+/* End of  Creating the Nav-bar - Non-responsive */
+
+/*  Creating the responsive bar */
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  background-radius: 10px;
+}
+
 @media screen and (max-width: 600px) {
   body {
     border-collapse: collapse;
@@ -174,12 +247,9 @@ tbody {
     padding: 0.6rem;
     font-size: 1.2rem;
   }
-  table {
-    /* width: 20vw; */
-  }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 400px) {
   body {
     border-collapse: collapse;
   }
@@ -191,7 +261,11 @@ tbody {
     font-size: 1.2rem;
     /* color: red; */
   }
-  table {
-    /* width: 20vw; */
-  }
+  /* .toggle-button {
+    display: flex;
+  } */
+
+  /* .navbar-links {
+    display: none;
+  } */
 }
