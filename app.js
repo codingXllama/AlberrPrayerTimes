@@ -144,6 +144,34 @@ async function getPrayer2() {
 
       sunrise_timing.innerHTML = sunriseTime;
 
+      //Prayer Times
+      var fajrAdthan_Minutes = parseInt(fajrAdhan.slice(-2));
+      var fajrAdthan_hours = parseInt(fajrAdhan);
+      var fajrIqama_hours = parseInt(fajrIqama);
+      var fajrIqama_minutes = parseInt(fajrIqama.slice(-2));
+
+      var sunRise_hours = parseInt(sunriseTime);
+      var sunRise_minutes = parseInt(sunriseTime.slice(-2));
+      var duhrAdthanMinutes = parseInt(duhrAdhan.slice(-2));
+      var duhrAdthanHours = parseInt(duhrAdhan);
+      var duhrIqama_hours = parseInt(duhrIqama);
+      var duhrIqama_minutes = parseInt(duhrIqama.slice(-2));
+
+      var asrAdthanHours = parseInt(asrAdhan);
+      var asrAdthanMinutes = parseInt(asrAdhan.slice(-2));
+      var asrIqama_hours = parseInt(asrIqama);
+      var asrIqama_minutes = parseInt(asrIqama.slice(-2));
+
+      var maghribAdthanHours = parseInt(maghribAdhan);
+      var maghribAdthanMinutes = parseInt(maghribAdhan.slice(-2));
+      var maghribIqama_hours = parseInt(maghribIqama);
+      var maghribIqama_minutes = parseInt(maghribIqama.slice(-2));
+
+      var ishaAdthanHours = parseInt(ishaAdhan);
+      var ishaIqamaHours = parseInt(ishaIqama);
+      var ishaAdthanMinutes = parseInt(ishaAdhan.slice(-2));
+      var ishaIqamaMinutes = parseInt(ishaIqama.slice(-2));
+
       // Get the 12 time
 
       // ****************************************** TESTS *****************************************
@@ -155,14 +183,6 @@ async function getPrayer2() {
       // Assigning the wallpaper for the time
 
       if (currentTimeSignature.toLowerCase() === "am") {
-        var fajrAdthan_Minutes = parseInt(fajrAdhan.slice(-2));
-        var fajrAdthan_hours = parseInt(fajrAdhan);
-        var fajrIqama_hours = parseInt(fajrIqama);
-        var fajrIqama_minutes = parseInt(fajrIqama.slice(-2));
-
-        var sunRise_hours = parseInt(sunriseTime);
-        var sunRise_minutes = parseInt(sunriseTime.slice(-2));
-
         if (current12_hourTime >= sunRise_hours && current12_hourTime < 12) {
           document.body.style.background = "url('./Images/bgMain.jpg')";
           document.body.style.backgroundPosition = "center";
@@ -185,27 +205,13 @@ async function getPrayer2() {
         // getting all afternoon prayer times
         // console.log("in");
 
-        var duhrAdthanMinutes = parseInt(duhrAdhan.slice(-2));
-        var duhrAdthanHours = parseInt(duhrAdhan);
-        var duhrIqama_hours = parseInt(duhrIqama);
-        var duhrIqama_minutes = parseInt(duhrIqama.slice(-2));
-
-        var asrAdthanHours = parseInt(asrAdhan);
-        var asrAdthanMinutes = parseInt(asrAdhan.slice(-2));
-        var asrIqama_hours = parseInt(asrIqama);
-        var asrIqama_minutes = parseInt(asrIqama.slice(-2));
-
-        var maghribAdthanHours = parseInt(maghribAdhan);
-        var maghribAdthanMinutes = parseInt(maghribAdhan.slice(-2));
-        var maghribIqama_hours = parseInt(maghribIqama);
-        var maghribIqama_minutes = parseInt(maghribIqama.slice(-2));
-
-        var ishaAdthanHours = parseInt(ishaAdhan);
-        var ishaIqamaHours = parseInt(ishaIqama);
-        var ishaAdthanMinutes = parseInt(ishaAdhan.slice(-2));
-        var ishaIqamaMinutes = parseInt(ishaIqama.slice(-2));
         // maghribAdthanHours = 12;
         // current12_hourTime = 10;
+
+        console.log("current 12 hr time", current12_hourTime);
+        console.log("current duhrAdthan hrs", duhrAdthanHours);
+        // console.log("current current12_hourTime", current12_hourTime);
+        console.log("asrAdthanHours+1", asrAdthanHours + 1);
 
         if (current12_hourTime >= duhrAdthanHours && current12_hourTime < asrAdthanHours + 1) {
           document.body.style.background = "url('./Images/bgMain.jpg')";
@@ -215,20 +221,28 @@ async function getPrayer2() {
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
-        } else if (current12_hourTime >= asrAdthanHours && current12_hourTime < maghribAdthanHours) {
+        } else if (current12_hourTime >= asrAdthanHours + 1 && current12_hourTime < maghribAdthanHours) {
           document.body.style.background = "url('./Images/bgAsr.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
-        } else {
+        } else if (current12_hourTime >= maghribAdthanHours) {
           document.body.style.background = "url('./Images/bgNight.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#eee";
           currentDate_ID.style.color = "#eee";
+        } else {
+          document.body.style.background = "url('./Images/bgMain.jpg')";
+          // alert("hi");
+          document.body.style.backgroundPosition = "center";
+          document.body.style.backgroundSize = "cover";
+          document.body.style.backgroundRepeat = "no-repeat";
+          currentTimeID.style.color = "#555";
+          currentDate_ID.style.color = "#555";
         }
       }
 
