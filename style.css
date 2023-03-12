@@ -111,7 +111,7 @@ tbody {
   max-height: 10%;
   max-width: 90vw;
   margin: 1rem;
-  border-radius: 10px;
+  -o-border-radius: 10px;
   background: rgba(255, 255, 255, 0.27);
   color: rgb(254, 254, 254);
   box-shadow: 0 10px 10px 10px rgb(0, 0, 0, 0.2);
@@ -122,7 +122,7 @@ tbody {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 10px;
 }
 
 #adthan,
