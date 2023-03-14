@@ -238,7 +238,7 @@ async function getPrayer2() {
           document.body.style.backgroundRepeat = "no-repeat";
           currentTimeID.style.color = "#eee";
           currentDate_ID.style.color = "#eee";
-        } else if (current12_hourTime + 12 >= maghribAdthanHours + 12 && current12_hourTime >= ishaAdthanHours + 12) {
+        } else if (current12_hourTime + 12 >= maghribAdthanHours + 12 && current12_hourTime + 12 <= ishaAdthanHours + 12) {
           console.log("y");
 
           document.body.style.background = "url('./Images/bgNight.jpg')";
