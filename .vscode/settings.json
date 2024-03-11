@@ -1,4 +1,24 @@
 {
     "livePreview.defaultPreviewPath": "c:\\Users\\osama\\OneDrive\\Documents\\Projects\\AlBerr Mosque Website Prayer App\\index.html",
-    "liveServer.settings.port": 5502
+    "liveServer.settings.port": 5502,
+    "workbench.colorCustomizations": {
+        "list.hoverBackground": "#373b4c96",
+        "editor.selectionBackground": "#65dcf64a",
+        "tab.unfocusedHoverBackground": "#323842",
+        "widget.shadow": "#8d8d8d",
+        "titleBar.activeForeground": "#ffffff",
+        "list.inactiveSelectionForeground": "#00BCD4",
+        "editorSuggestWidget.highlightForeground": "#00BCD4",
+        "textLink.foreground": "#00BCD4",
+        "progressBar.background": "#00454e",
+        "pickerGroup.foreground": "#00BCD4",
+        "notificationLink.foreground": "#00BCD4",
+        "editorWidget.resizeBorder": "#00BCD4",
+        "editorWidget.border": "#00BCD4",
+        "settings.modifiedItemIndicator": "#00BCD4",
+        "breadcrumb.activeSelectionForeground": "#00BCD4",
+        "editorCursor.foreground": "#ffffff",
+        "minimap.background": "#00000000",
+        "scrollbar.shadow": "#00000000"
+    }
 }
