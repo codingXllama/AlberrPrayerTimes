@@ -201,7 +201,7 @@ async function getPrayer2() {
           currentTimeID.style.color = "#555";
           currentDate_ID.style.color = "#555";
         } else {
-          console.log("x");
+          // console.log("x");
           document.body.style.background = "url('./Images/bgNight.jpg')";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundSize = "cover";
@@ -220,7 +220,7 @@ async function getPrayer2() {
 
         // console.log("current 12 hr time", current12_hourTime);
         // console.log("current duhrAdthan hrs", duhrAdthanHours);
-        console.log("current current12_hourTime", current12_hourTime);
+        // console.log("current current12_hourTime", current12_hourTime);
         // console.log("asrAdthanHours+1", asrAdthanHours + 1);
 
         if (current12_hourTime == duhrAdthanHours) {
