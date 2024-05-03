@@ -54,6 +54,11 @@ function doDate() {
 // updating the time every second
 setInterval(doDate, 1000);
 
+function formatDate(date) {
+  const options = { weekday: "long", month: "long", day: "numeric", year: "numeric" };
+  return new Date(date).toLocaleDateString("en-US", options);
+}
+
 async function getPrayer2() {
   fetch("CompleteTimes24.json")
     .then(function (response) {
@@ -113,29 +118,84 @@ async function getPrayer2() {
           var ishaAdhan = prayer.Isha;
           var ishaIqama = prayer.IshaIqama;
 
-          out += `
-            <p> Fajr </p>
-            <p> Adhan: ${prayer.Fajr}</p>
-            <p> Iqama: ${prayer.FajrIqama}</p>
-            <p> Duhr </p>
-            <p> Adhan: ${prayer.Dhuhr}</p>
-            <p> Iqama: ${prayer.DhuhrIqama}</p>
-            <p> Asr </p>
-            <p> Adhan: ${prayer.Asr}</p>
-            <p> Iqama: ${prayer.AsrIqama}</p>
-            <p> Maghrib </p>
-            <p> Adhan: ${prayer.Maghrib}</p>
-            <p> Iqama: ${prayer.MaghribIqama}</p>
-             <p> Isha </p>
-            <p> Adhan: ${prayer.Isha}</p>
-            <p> Iqama: ${prayer.IshaIqama}</p>
+          // out += `
+          //   <p> Fajr </p>
+          //   <p> Adhan: ${prayer.Fajr}</p>
+          //   <p> Iqama: ${prayer.FajrIqama}</p>
+          //   <p> Duhr </p>
+          //   <p> Adhan: ${prayer.Dhuhr}</p>
+          //   <p> Iqama: ${prayer.DhuhrIqama}</p>
+          //   <p> Asr </p>
+          //   <p> Adhan: ${prayer.Asr}</p>
+          //   <p> Iqama: ${prayer.AsrIqama}</p>
+          //   <p> Maghrib </p>
+          //   <p> Adhan: ${prayer.Maghrib}</p>
+          //   <p> Iqama: ${prayer.MaghribIqama}</p>
+          //    <p> Isha </p>
+          //   <p> Adhan: ${prayer.Isha}</p>
+          //   <p> Iqama: ${prayer.IshaIqama}</p>
 
-          `;
+          // `;
+
+          //Getting todays data:
+
+          // Usage
+          const currentDate = new Date();
+          const formattedDate = formatDate(currentDate);
+          // console.log(formattedDate); // Output: Monday, May 2, 2024
+
+          // Array of day names
+          const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+          // Get the current date
+          // const currentDate = new Date();
+
+          // Get the day of the week (0-6)
+          const dayOfWeekNumber = currentDate.getDay();
+
+          // Get the day name
+          const dayName = daysOfWeek[dayOfWeekNumber];
+
+          // console.log("Today is " + currentDate);
+
+          document.getElementById("whatsapp").addEventListener("click", function () {
+            const currentDay_PrayerTime = `
+        👋 Assalamu Alaikum Everyone, today's prayer time is as follows:
+        📅 Date: ${formattedDate}
+
+        ➡️Fajr
+        Adhan: ${prayer.Fajr}
+        Iqama: ${prayer.FajrIqama}
+
+        ➡️Duhr
+        Adhan: ${prayer.Dhuhr}
+        Iqama: ${prayer.DhuhrIqama}
+
+        ➡️Asr
+        Adhan: ${prayer.Asr}
+        Iqama: ${prayer.AsrIqama}
+
+        ➡️Maghrib
+        Adhan: ${prayer.Maghrib}
+        Iqama: ${prayer.MaghribIqama}
+
+        ➡️Isha
+        Adhan: ${prayer.Isha}
+        Iqama: ${prayer.IshaIqama}
+    `;
+
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(currentDay_PrayerTime);
+
+            // Open WhatsApp with the encoded message
+            window.open(`whatsapp://send?text=${encodedMessage}`, "_blank");
+          });
         }
+
         // placeholder.innerHTML = out;
       }
 
-      // console.log(out);
+      // console.log(currentDay_PrayerTime);
 
       fajrIqama_timing.innerHTML = fajrIqama;
       fajrAdhan_timing.innerHTML = fajrAdhan;
