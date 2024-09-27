@@ -22,6 +22,29 @@ const ishaIqama_timing = document.getElementById("isha-iqama");
 const toggleButton = document.getElementsByClassName("toggle-button")[0];
 const navbarLinks = document.getElementsByClassName("navbar-links")[0];
 
+// Next and back button
+// const nextBtn = document.getElementById("nextBtn");
+// nextBtn.addEventListener("click", () => {
+//   // Get the current date
+//   let today = new Date();
+
+//   // Add one day to the current date
+//   let tomorrow = new Date();
+//   tomorrow.setDate(today.getDate() + 1);
+
+//   // Get year, month, and day for tomorrow's date
+//   let currentYear = tomorrow.getFullYear();
+//   let tomorrowMonth = String(tomorrow.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+//   let tomorrowDay = String(tomorrow.getDate()).padStart(2, "0");
+
+//   // Format the date as YYYY-MM-DD
+//   let tomorrowsDate = `${currentYear}-${tomorrowMonth}-${tomorrowDay}`;
+//   console.log("Tomorrow's date is: ", tomorrowsDate);
+
+//   // Display the date in an alert (optional)
+//   alert(`Tomorrow's date is: ${tomorrowsDate}`);
+// });
+
 // toggleButton.addEventListener("click", () => {
 //   navbarLinks.classList.toggle("active");
 // });
@@ -90,7 +113,7 @@ async function getPrayer2() {
 
       // console.log("Months day: ", todaysMonthDay);
       var todaysDate = currentYear + "-" + todaysMonth + "-" + todaysMonthDay;
-      // console.log("Todays date is: ", todaysDate);
+      console.log("Todays date is: ", todaysDate);
 
       // let placeholder = document.querySelector(".container");
       let out = "";
@@ -156,7 +179,7 @@ async function getPrayer2() {
           // Get the day name
           const dayName = daysOfWeek[dayOfWeekNumber];
 
-          // console.log("Today is " + currentDate);
+          console.log("Today is " + currentDate);
 
           document.getElementById("whatsapp").addEventListener("click", function () {
             const currentDay_PrayerTime = `
