@@ -310,7 +310,7 @@ function updateBackgroundBasedOnTime() {
   var currentTimeSignature = now.toLocaleDateString("en-us", { hour: "numeric", hour12: true }).slice(-2);
 
   // Assume these variables are predefined somewhere in your code
-  const sunRise_hours = 5; // Example sunrise time in 12-hour format (e.g., 5 AM)
+  const sunRise_hours = 6; // Example sunrise time in 12-hour format (e.g., 5 AM)
   const duhrAdthanHours = 12; // Example time for Duhr prayer (e.g., 12 PM)
   const asrAdthanHours = 3; // Example time for Asr prayer (e.g., 3 PM)
   const maghribAdthanHours = 6; // Example time for Maghrib prayer (e.g., 6 PM)
