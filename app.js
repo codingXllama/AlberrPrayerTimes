@@ -1,5 +1,6 @@
 const currentTimeID = document.getElementById("currentTime");
 const currentDate_ID = document.getElementById("currentDate");
+const currentDate_final = document.getElementById("currentDate_final");
 const fajrAdhan_label = document.getElementById("fair-prayer");
 const fajrAdhan_timing = document.getElementById("fajr-adhan");
 const fajrIqama_timing = document.getElementById("fajr-iqama");
@@ -17,7 +18,8 @@ const maghribIqama_timing = document.getElementById("maghrib-iqama");
 const ishaAdhan_timing = document.getElementById("isha-adhan");
 const ishaIqama_timing = document.getElementById("isha-iqama");
 
-//button
+let nextDay_Btn = document.getElementById("NextDayPrayer");
+let clickCount = 1;
 
 const toggleButton = document.getElementsByClassName("toggle-button")[0];
 const navbarLinks = document.getElementsByClassName("navbar-links")[0];
@@ -78,7 +80,7 @@ function doDate() {
 setInterval(doDate, 1000);
 
 function formatDate(date) {
-  const options = { weekday: "long", month: "long", day: "numeric", year: "numeric" };
+  const options = { weekday: "short", month: "short", day: "numeric", year: "numeric" };
   return new Date(date).toLocaleDateString("en-US", options);
 }
 
@@ -96,7 +98,6 @@ async function getPrayer2() {
       var current12_hourTime = parseInt(now.toLocaleDateString("en-us", { hour: "numeric", hour12: true }).slice(-5));
       var currentTimeSignature = now.toLocaleDateString("en-us", { hour: "numeric", hour12: true }).slice(-2);
       var currentDate = now.toLocaleDateString("en-us", { hour: "numeric", hour12: true });
-      // console.log(currentDate);
 
       // creating the unique ID for the JSON
       const tempMonth = new Date().getMonth() + 1;
@@ -112,12 +113,32 @@ async function getPrayer2() {
       var todaysMonthDay = `${temp_MonthDay < 10 ? "0" : ""}${temp_MonthDay}`;
 
       // console.log("Months day: ", todaysMonthDay);
+      // This is the primary key
       var todaysDate = currentYear + "-" + todaysMonth + "-" + todaysMonthDay;
       console.log("Todays date is: ", todaysDate);
+
+      var nextPrayerDate = currentYear + "-" + todaysMonth + "-" + todaysMonthDay;
+      console.log("Tomorrows date is: ", nextPrayerDate);
+
+      // Get tomorrow's date
+      var tomorrow = new Date(now);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      // Format tomorrow's date
+      var nextYear = tomorrow.getFullYear();
+      var nextMonth = tomorrow.getMonth() + 1; // Months are zero-based
+      var nextDay = tomorrow.getDate();
+
+      // Add leading zeroes for single-digit months/days
+      var tomorrowsMonth = `${nextMonth < 10 ? "0" : ""}${nextMonth}`;
+      var tomorrowsMonthDay = `${nextDay < 10 ? "0" : ""}${nextDay}`;
+      var nextPrayerDate = `${nextYear}-${tomorrowsMonth}-${tomorrowsMonthDay}`;
+      console.log("Tomorrow's date is: ", nextPrayerDate);
 
       // let placeholder = document.querySelector(".container");
       let out = "";
 
+      // This is where we display the prayer times
       for (let prayer of allPrayers) {
         // console.log(todaysDate);
         if (prayer.Date == todaysDate) {
@@ -164,11 +185,15 @@ async function getPrayer2() {
 
           // Usage
           const currentDate = new Date();
-          const formattedDate = formatDate(currentDate);
-          // console.log(formattedDate); // Output: Monday, May 2, 2024
+          const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+          const daysOfWeek = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+          const month = months[currentDate.getMonth()]; // Get the month as a short name
+          const day = currentDate.getDate(); // Get the day
+          const year = currentDate.getFullYear(); // Get the year
+          const formattedDate = `${month} ${day}, ${year}`;
 
-          // Array of day names
-          const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+          // const formattedDate = formatDate(currentDate);
+          console.log(formattedDate); // Output: Monday, May 2, 2024
 
           // Get the current date
           // const currentDate = new Date();
@@ -178,9 +203,13 @@ async function getPrayer2() {
 
           // Get the day name
           const dayName = daysOfWeek[dayOfWeekNumber];
+          let finalDay = `${dayName} ${month} ${dayOfWeekNumber}, ${year}`;
+          document.getElementById("currentDate").textContent = finalDay;
+          // console.log("object :>> ", finalDay);
 
-          console.log("Today is " + currentDate);
+          // console.log("Today is " + dayName + " " + month + +dayName + year);
 
+          // Whatsapp button
           document.getElementById("whatsapp").addEventListener("click", function () {
             const currentDay_PrayerTime = `
         👋 Assalamu Alaikum Everyone, today's prayer time is as follows:
@@ -212,6 +241,66 @@ async function getPrayer2() {
 
             // Open WhatsApp with the encoded message
             window.open(`whatsapp://send?text=${encodedMessage}`, "_blank");
+          });
+
+          // NEXT DAY Button
+          nextDay_Btn.addEventListener("click", function () {
+            console.log("current click count :>> ", clickCount);
+            clickCount++;
+
+            if (clickCount % 2 == 0) {
+              nextDay_Btn.textContent = "Current Day";
+              nextDay_Btn.style.backgroundColor = "red";
+              currentDate_ID.textContent = nextPrayerDate;
+
+              console.log("Tomorrow's date is: ", nextPrayerDate);
+              if (prayer.Date == nextPrayerDate) {
+                var sunriseTime = prayer.Sunrise;
+                // console.log(sunriseTime);
+                var fajrAdhan = prayer.Fajr;
+                var fajrIqama = prayer.FajrIqama;
+
+                // Duhr timing
+                var duhrAdhan = prayer.Dhuhr;
+                var duhrIqama = prayer.DhuhrIqama;
+                //Asr  timing
+                var asrAdhan = prayer.Asr;
+                var asrIqama = prayer.AsrIqama;
+
+                // Maghrib timing
+                var maghribAdhan = prayer.Maghrib;
+                var maghribIqama = prayer.MaghribIqama;
+
+                //Isha
+                var ishaAdhan = prayer.Isha;
+                var ishaIqama = prayer.IshaIqama;
+                fajrIqama_timing.innerHTML = fajrIqama;
+                fajrAdhan_timing.innerHTML = fajrAdhan;
+
+                duhrAdhan_timing.innerHTML = duhrAdhan;
+                duhrIqama_timing.innerHTML = duhrIqama;
+
+                asrAdhan_timing.innerHTML = asrAdhan;
+                asrIqama_timing.innerHTML = asrIqama;
+
+                maghribAdhan_timing.innerHTML = maghribAdhan;
+                maghribIqama_timing.innerHTML = maghribIqama;
+
+                ishaAdhan_timing.innerHTML = ishaAdhan;
+                ishaIqama_timing.innerHTML = ishaIqama;
+
+                sunrise_timing.innerHTML = sunriseTime;
+              }
+            } else {
+              nextDay_Btn.textContent = "Next Day";
+              currentDate_ID.textContent = todaysDate;
+
+              console.log("Todays date is: ", todaysDate);
+
+              // nextDay_Btn.style.backgroundColor = "";
+              // nextDay_Btn.classList.add("");
+            }
+            console.log("left else");
           });
         }
 
@@ -263,6 +352,7 @@ async function getPrayer2() {
       var ishaAdthanHours = parseInt(ishaAdhan);
       var ishaIqamaHours = parseInt(ishaIqama);
       var ishaAdthanMinutes = parseInt(ishaAdhan.slice(-2));
+      // let clickCount = 0;
       var ishaIqamaMinutes = parseInt(ishaIqama.slice(-2));
 
       // Get the 12 time
