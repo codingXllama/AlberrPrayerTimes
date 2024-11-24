@@ -366,7 +366,7 @@ function updateBackgroundBasedOnTime() {
       currentDate_ID.style.color = "#eee";
     } else {
       // Default (if none of the above)
-      document.body.style.background = "url('./Images/bgMain.jpg')";
+      document.body.style.background = "url('./Images/bgNight.jpg')";
       document.body.style.backgroundPosition = "center";
       document.body.style.backgroundSize = "cover";
       document.body.style.backgroundRepeat = "no-repeat";
