@@ -102,8 +102,8 @@ async function getTomorrowPrayerTimes() {
           console.log("Todays date: " + prayer.Date);
           out += `
           <p>Fajr</p>
-          <p>Adhan: ${prayer.Fajr}</p>
-          <p>Iqama: ${prayer.FajrIqama}</p>
+          <p>Adhan: ${prayer.fajrAdhan}</p>
+          <p>Iqama: ${prayer.fajrAdhanIqama}</p>
           <p>Duhr</p>
           <p>Adhan: ${prayer.Dhuhr}</p>
           <p>Iqama: ${prayer.DhuhrIqama}</p>
@@ -119,15 +119,15 @@ async function getTomorrowPrayerTimes() {
         `;
           // Getting the prayer times
           sunriseTime = prayer.Sunrise;
-          fajrAdhan = prayer.Fajr;
+          fajrAdhan = prayer.FajrAthan;
           fajrIqama = prayer.FajrIqama;
-          dhuhrAdhan = prayer.Dhuhr;
-          dhuhrIqama = prayer.DhuhrIqama;
-          asrAdhan = prayer.Asr;
+          dhuhrAdhan = prayer.DuhrAthan;
+          dhuhrIqama = prayer.DuhrIqama;
+          asrAdhan = prayer.AsrAthan;
           asrIqama = prayer.AsrIqama;
-          maghrebAdhan = prayer.Maghrib;
+          maghrebAdhan = prayer.MaghribAthan;
           maghrebIqama = prayer.MaghribIqama;
-          ishaAdhan = prayer.Isha;
+          ishaAdhan = prayer.IshaAthan;
           ishaIqama = prayer.IshaIqama;
           break; // Stop looping once tomorrow's prayer times are found
         }
@@ -198,8 +198,8 @@ async function getTodayPrayerTimes() {
       if (prayer.Date === todaysDate) {
         out += `
           <p>Fajr</p>
-          <p>Adhan: ${prayer.Fajr}</p>
-          <p>Iqama: ${prayer.FajrIqama}</p>
+          <p>Adhan: ${prayer.fajrAdhan}</p>
+          <p>Iqama: ${prayer.fajrAdhanIqama}</p>
           <p>Duhr</p>
           <p>Adhan: ${prayer.Dhuhr}</p>
           <p>Iqama: ${prayer.DhuhrIqama}</p>
@@ -216,15 +216,15 @@ async function getTodayPrayerTimes() {
 
         // Getting the prayer times
         sunriseTime = prayer.Sunrise;
-        fajrAdhan = prayer.Fajr;
+        fajrAdhan = prayer.FajrAthan;
         fajrIqama = prayer.FajrIqama;
-        dhuhrAdhan = prayer.Dhuhr;
-        dhuhrIqama = prayer.DhuhrIqama;
-        asrAdhan = prayer.Asr;
+        dhuhrAdhan = prayer.DuhrAthan;
+        dhuhrIqama = prayer.DuhrIqama;
+        asrAdhan = prayer.AsrAthan;
         asrIqama = prayer.AsrIqama;
-        maghrebAdhan = prayer.Maghrib;
+        maghrebAdhan = prayer.MaghribAthan;
         maghrebIqama = prayer.MaghribIqama;
-        ishaAdhan = prayer.Isha;
+        ishaAdhan = prayer.IshaAthan;
         ishaIqama = prayer.IshaIqama;
         break; // Stop looping once today's prayer times are found
       }
@@ -235,8 +235,8 @@ async function getTodayPrayerTimes() {
         📅 Date: ${formattedDate}
 
         ➡️Fajr
-        Adhan: ${prayer.Fajr}
-        Iqama: ${prayer.FajrIqama}
+        Adhan: ${prayer.fajrAdhan}
+        Iqama: ${prayer.fajrAdhanIqama}
 
         ➡️Duhr
         Adhan: ${prayer.Dhuhr}
@@ -310,7 +310,7 @@ function updateBackgroundBasedOnTime() {
   var currentTimeSignature = now.toLocaleDateString("en-us", { hour: "numeric", hour12: true }).slice(-2);
 
   // Assume these variables are predefined somewhere in your code
-  const sunRise_hours = 6; // Example sunrise time in 12-hour format (e.g., 5 AM)
+  const sunRise_hours = 5; // Example sunrise time in 12-hour format (e.g., 5 AM)
   const duhrAdthanHours = 12; // Example time for Duhr prayer (e.g., 12 PM)
   const asrAdthanHours = 3; // Example time for Asr prayer (e.g., 3 PM)
   const maghribAdthanHours = 6; // Example time for Maghrib prayer (e.g., 6 PM)
@@ -340,7 +340,7 @@ function updateBackgroundBasedOnTime() {
       currentDate_ID.style.color = "#eee";
     }
   } else if (currentTimeSignature.toLowerCase() === "pm") {
-    if (current12_hourTime == duhrAdthanHours) {
+    if (current12_hourTime == duhrAdthanHours || current12_hourTime < asrAdthanHours) {
       // Duhr prayer time (noon)
       document.body.style.background = "url('./Images/bgMain.jpg')";
       document.body.style.backgroundPosition = "center";
