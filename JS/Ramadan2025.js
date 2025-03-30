@@ -7,6 +7,8 @@ const whatsappButton = document.getElementById("whatsapp");
 const tomorrowPrayerTimes = document.getElementById("tomorrowPrayerTimes");
 const todayPrayerTimes = document.getElementById("todayPrayerTimes");
 
+const todaysFormattedDate = document.getElementById("todaysFormattedDate");
+
 // Prayer Labels
 const fajrAdhan_label = document.getElementById("fair-prayer");
 const fajrAdhan_timing = document.getElementById("fajr-adhan");
@@ -53,10 +55,12 @@ const month = months[currentDate.getMonth()]; // Get the month as a short name
 const day = currentDate.getDate(); // Get the day
 const year = currentDate.getFullYear(); // Get the year
 const dayOfWeek = daysOfWeek[currentDate.getDay()]; // Get the day of the week
-let formattedDate = ` ${dayOfWeek}, ${month} ${day}, ${year}`;
+let formattedDate = ` ${dayOfWeek} ${month} ${day}, ${year}`;
+// todaysFormattedDate.innerHTML = formattedDate;
 
 // You can now use these values as needed, for example:
-// console.log(`Today is ${dayOfWeek}, ${month} ${day}, ${year}`);
+// console.log(`Today is ${dayOfWeek} ${month} ${day}, ${year}`);
+// console.log(formattedDate);
 
 setInterval(updateCurrentTime(false), 1000);
 
