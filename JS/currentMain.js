@@ -231,28 +231,29 @@ async function getTodayPrayerTimes() {
 
       document.getElementById("whatsapp").addEventListener("click", function () {
         const currentDay_PrayerTime = `
-        👋 Assalamu Alaikum Everyone, today's prayer time is as follows:
+        📢 Assalamu Alaikum Everyone, today's prayer time is as follows:
         📅 Date: ${formattedDate}
 
-        ➡️Fajr
+        ➡️الفجر|Fajr
         Adhan: ${prayer.fajrAdhan}
         Iqama: ${prayer.fajrAdhanIqama}
 
-        ➡️Duhr
+        ➡️الظهر|Duhr
         Adhan: ${prayer.Dhuhr}
         Iqama: ${prayer.DhuhrIqama}
 
-        ➡️Asr
+        ➡️العصر|Asr
         Adhan: ${prayer.Asr}
         Iqama: ${prayer.AsrIqama}
 
-        ➡️Maghrib
+        ➡️المغرب|Maghrib
         Adhan: ${prayer.Maghrib}
         Iqama: ${prayer.MaghribIqama}
 
-        ➡️Isha
+        ➡️العشاء|Isha
         Adhan: ${prayer.Isha}
         Iqama: ${prayer.IshaIqama}
+
     `;
 
         // Encode the message for URL
